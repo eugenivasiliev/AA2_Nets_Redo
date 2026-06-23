@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS `AA2_Nets`;
+USE `AA2_Nets`;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nickname VARCHAR(30),
+    password_hash VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS rankings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    points INT,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
